@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Регистрация на тренинги</title>
+    
+</head>
+<body>
+    <div>
+        <hr />
+        <h3>Доступные тренинги</h3>
+        <hr />
+        <table>
+  
+            @foreach (var b in ViewBag.Tranings)
+            {
+                <tr>
+                    <td><p>@b.Name</p></td>
+                    <td><p><a href="/Home/Registration/@b.Id">Зарегистрироваться</a></p></td>
+                    <td><p><a href="/Home/ShowList/@b.Id">Список зарегистрированных студентов</a></p></td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
